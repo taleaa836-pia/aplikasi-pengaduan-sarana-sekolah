@@ -1,0 +1,96 @@
+:root {
+    --primary-color: #6BAED6;
+    /* Soft Purple */
+    --secondary-color: #808191;
+    --bg-color: #F7F7F7;
+    --card-bg: #FFFFFF;
+    --text-color: #11142D;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Use a modern font */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #6BAED6;
+    border-color: #6BAED6;
+}
+
+.sidebar {
+    min-height: 100vh;
+    background-color: var(--card-bg);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .nav-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(108, 93, 211, 0.1);
+    color: var(--primary-color);
+}
+
+
+.login-card {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.bg-green {
+    background-color: #5a9cb5 !important;
+}
+
+.bg-warning {
+    background-color: #e0a8a8 !important;
+}
+
+.bg-success {
+    background-color: #95df84 !important;
+}
+
+.bg-primary {
+    background-color: #94b4c1 !important;
+}
+
+.bg-info {
+    background-color: #e1d0b3 !important;
+}
+
+.bg-pink {
+    background-color: #d68ab9 !important;
+}
+
+.bg-blue {
+    background-color: #7fa1c3 !important;
+}
+
+.bg-red {
+    background-color: #e71616 !important;
+}
