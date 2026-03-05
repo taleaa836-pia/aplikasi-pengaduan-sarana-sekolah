@@ -1,37 +1,55 @@
 {
-    "functions": {
-        "**/*.php": {
-            "runtime": "vercel-php@0.6.0"
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.php",
+            "use": "vercel-php@0.6.0"
+        },
+        {
+            "src": "admin/*.php",
+            "use": "vercel-php@0.6.0"
+        },
+        {
+            "src": "siswa/*.php",
+            "use": "vercel-php@0.6.0"
+        },
+        {
+            "src": "auth/*.php",
+            "use": "vercel-php@0.6.0"
+        },
+        {
+            "src": "config/*.php",
+            "use": "vercel-php@0.6.0"
         }
-    },
-    "rewrites": [
+    ],
+    "routes": [
         {
-            "source": "/assets/(.*)",
-            "destination": "/assets/$1"
+            "src": "/assets/(.*)",
+            "dest": "/assets/$1"
         },
         {
-            "source": "/uploads/(.*)",
-            "destination": "/uploads/$1"
+            "src": "/uploads/(.*)",
+            "dest": "/uploads/$1"
         },
         {
-            "source": "/admin",
-            "destination": "/admin/index.php"
+            "src": "/admin",
+            "dest": "/admin/index.php"
         },
         {
-            "source": "/siswa",
-            "destination": "/siswa/index.php"
+            "src": "/siswa",
+            "dest": "/siswa/index.php"
         },
         {
-            "source": "/auth",
-            "destination": "/auth/login.php"
+            "src": "/auth",
+            "dest": "/auth/login.php"
         },
         {
-            "source": "/(.*).php",
-            "destination": "/$1.php"
+            "src": "/(.*).php",
+            "dest": "/$1.php"
         },
         {
-            "source": "/",
-            "destination": "/index.php"
+            "src": "/",
+            "dest": "/index.php"
         }
     ]
 }
