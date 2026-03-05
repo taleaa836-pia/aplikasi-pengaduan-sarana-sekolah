@@ -1,0 +1,37 @@
+{
+    "functions": {
+        "**/*.php": {
+            "runtime": "vercel-php"
+        }
+    },
+    "rewrites": [
+        {
+            "source": "/assets/(.*)",
+            "destination": "/assets/$1"
+        },
+        {
+            "source": "/uploads/(.*)",
+            "destination": "/uploads/$1"
+        },
+        {
+            "source": "/admin",
+            "destination": "/admin/index.php"
+        },
+        {
+            "source": "/siswa",
+            "destination": "/siswa/index.php"
+        },
+        {
+            "source": "/auth",
+            "destination": "/auth/login.php"
+        },
+        {
+            "source": "/(.*).php",
+            "destination": "/$1.php"
+        },
+        {
+            "source": "/",
+            "destination": "/index.php"
+        }
+    ]
+}

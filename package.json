@@ -1,0 +1,9 @@
+{
+    "name": "sopia",
+    "version": "1.0.0",
+    "description": "Sistem Operasi Pengaduan Inventaris & Aset",
+    "scripts": {
+        "dev": "php -S localhost:8000"
+    },
+    "dependencies": {}
+}

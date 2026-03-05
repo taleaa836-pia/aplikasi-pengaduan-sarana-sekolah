@@ -1,0 +1,9 @@
+.env
+.env.local
+.vercel
+node_modules/
+/uploads/*
+!/uploads/.gitkeep
+vendor/
+*.log
+.DS_Store
