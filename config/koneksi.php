@@ -39,5 +39,3 @@ if ($ssl_ca && $ssl_ca !== 'REQUIRED') {
 if (!mysqli_real_connect($koneksi, $host, $user, $pass, $db, $port)) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
-?>
-
