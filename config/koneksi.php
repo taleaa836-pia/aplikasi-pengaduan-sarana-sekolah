@@ -1,9 +1,21 @@
 <?php
-$host = getenv('DB_HOST') ?: "localhost";
-$user = getenv('DB_USER') ?: "root";
-$pass = getenv('DB_PASSWORD') ?: "";
-$db   = getenv('DB_NAME') ?: "sopia_db";
-$port = getenv('DB_PORT') ?: "3306";
+// Ambil environment variables dengan beberapa fallback nama umum
+$host = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: getenv('MYSQL_HOST') ?: "localhost";
+$user = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: getenv('MYSQL_USER') ?: "root";
+$pass = getenv('DB_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: getenv('DB_PASS') ?: ""; 
+$db   = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: "sopia_db";
+$port = getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: getenv('MYSQL_PORT') ?: "3306";
+
+// Coba parsing DATABASE_URL jika ada (Sering digunakan di Heroku/Vercel)
+if (getenv('DATABASE_URL')) {
+    $db_parsed = parse_url(getenv('DATABASE_URL'));
+    $host = $db_parsed['host'] ?? $host;
+    $user = $db_parsed['user'] ?? $user;
+    $pass = $db_parsed['pass'] ?? $pass;
+    $db   = ltrim($db_parsed['path'] ?? $db, '/');
+    $port = $db_parsed['port'] ?? $port;
+}
+
 $ssl_ca = getenv('DB_SSL_CA'); // Jalur opsional ke SSL CA untuk Aiven
 
 $koneksi = mysqli_init();
