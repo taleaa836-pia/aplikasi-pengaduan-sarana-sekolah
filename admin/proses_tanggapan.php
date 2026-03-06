@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_save_path('/tmp');
+    session_start();
+}
 include __DIR__ . '/../config/koneksi.php';
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login' || $_SESSION['role'] != 'admin') {

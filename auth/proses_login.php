@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 include __DIR__ . '/../config/koneksi.php';
 
-$username = trim($_POST['username']);
+$username = mysqli_real_escape_string($koneksi, trim($_POST['username']));
 $password = md5(trim($_POST['password']));
 
 $query = mysqli_query($koneksi, "SELECT * FROM users WHERE username='$username' AND password='$password'");
