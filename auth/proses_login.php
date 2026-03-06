@@ -1,9 +1,12 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_save_path('/tmp');
+    session_start();
+}
 include __DIR__ . '/../config/koneksi.php';
 
-$username = $_POST['username'];
-$password = md5($_POST['password']);
+$username = trim($_POST['username']);
+$password = md5(trim($_POST['password']));
 
 $query = mysqli_query($koneksi, "SELECT * FROM users WHERE username='$username' AND password='$password'");
 $cek = mysqli_num_rows($query);
@@ -19,11 +22,15 @@ if ($cek > 0) {
 
     if ($data['role'] == "admin") {
         header("Location: ../admin/index.php?pesan=berhasil");
+        exit;
     } else if ($data['role'] == "siswa") {
         header("Location: ../siswa/index.php?pesan=berhasil");
+        exit;
     } else {
         header("Location: login.php?pesan=gagal");
+        exit;
     }
 } else {
     header("Location: login.php?pesan=gagal");
+    exit;
 }
