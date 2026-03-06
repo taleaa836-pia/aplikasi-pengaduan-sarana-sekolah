@@ -2,23 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "index.php",
-            "use": "vercel-php@0.7.2"
-        },
-        {
-            "src": "admin/*.php",
-            "use": "vercel-php@0.7.2"
-        },
-        {
-            "src": "siswa/*.php",
-            "use": "vercel-php@0.7.2"
-        },
-        {
-            "src": "auth/*.php",
-            "use": "vercel-php@0.7.2"
-        },
-        {
-            "src": "config/*.php",
+            "src": "**/*.php",
             "use": "vercel-php@0.7.2"
         }
     ],

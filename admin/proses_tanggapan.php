@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../config/koneksi.php';
+include __DIR__ . '/../config/koneksi.php';
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login' || $_SESSION['role'] != 'admin') {
     header("Location: ../auth/login.php?pesan=belum_login");

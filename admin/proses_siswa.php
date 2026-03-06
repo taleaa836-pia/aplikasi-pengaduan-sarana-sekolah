@@ -4,7 +4,7 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login' || $_SESSION['
     header("Location: ../auth/login.php");
     exit;
 }
-include '../config/koneksi.php';
+include __DIR__ . '/../config/koneksi.php';
 
 $aksi = $_GET['aksi'];
 
