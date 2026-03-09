@@ -15,10 +15,10 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table `users`
--- password: password123 (MD5: 482c811da5d5b4bc6d497ffa98491e38)
+-- password: admin (MD5: 21232f297a57a5a743894a0e4a801fc3)
 INSERT INTO `users` (`nama`, `username`, `password`, `role`) VALUES
-('Administrator', 'admin', '482c811da5d5b4bc6d497ffa98491e38', 'admin'),
-('Siswa Satu', 'siswa', '482c811da5d5b4bc6d497ffa98491e38', 'siswa');
+('Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+('Siswa Satu', 'siswa', '21232f297a57a5a743894a0e4a801fc3', 'siswa');
 
 -- Table structure for table `kategori`
 CREATE TABLE `kategori` (

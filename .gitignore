@@ -2,8 +2,7 @@
 .env.local
 .vercel
 node_modules/
-/uploads/*
-!/uploads/.gitkeep
+# Track uploads to sync images
 vendor/
 *.log
 .DS_Store
