@@ -1,6 +1,8 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_save_path('/tmp');
+    if (is_dir('/tmp') && is_writable('/tmp')) {
+        session_save_path('/tmp');
+    }
     session_start();
 }
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login' || $_SESSION['role'] != 'admin') {

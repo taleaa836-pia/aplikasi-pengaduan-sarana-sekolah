@@ -35,7 +35,9 @@ if ($ssl_ca && $ssl_ca !== 'REQUIRED') {
     }
 }
 
-// Koneksi dengan port
-if (!mysqli_real_connect($koneksi, $host, $user, $pass, $db, $port)) {
+// Koneksi dengan port dan flag SSL jika CA tersedia
+$flags = ($ssl_ca && file_exists($ssl_ca)) ? MYSQLI_CLIENT_SSL : 0;
+
+if (!mysqli_real_connect($koneksi, $host, $user, $pass, $db, $port, NULL, $flags)) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
