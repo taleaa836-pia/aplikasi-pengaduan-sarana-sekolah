@@ -113,7 +113,7 @@ include __DIR__ . '/../config/koneksi.php';
         <ul class="nav flex-column mb-2">
             <!-- Add report links if needed -->
              <li class="nav-item">
-            <a class="nav-link" href="#" onclick="window.print()">
+            <a class="nav-link" href="cetak_laporan.php" target="_blank">
               <i class="bi bi-printer me-2"></i>
               Cetak Laporan
             </a>
