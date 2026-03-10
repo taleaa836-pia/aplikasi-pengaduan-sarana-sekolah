@@ -21,7 +21,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
         <div class="card p-3 h-100 bg-primary text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h6 class="text-white-50">Total Pengaduan</h6>
+                    <h6 class="text-white-55">Total Pengaduan</h6>
                     <h3 class="mb-0 fw-bold"><?php echo $total_pengaduan; ?></h3>
                 </div>
                 <i class="bi bi-archive fs-1 text-black-50"></i>
@@ -32,7 +32,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
         <div class="card p-3 h-100 bg-warning text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h6 class="text-white-50">Menunggu Verifikasi</h6>
+                    <h6 class="text-white-55">Menunggu Verifikasi</h6>
                     <h3 class="mb-0 fw-bold"><?php echo $baru; ?></h3>
                 </div>
                 <i class="bi bi-hourglass-split fs-1 text-black-50"></i>
@@ -43,7 +43,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
         <div class="card p-3 h-100 bg-info text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h6 class="text-white-50">Sedang Diproses</h6>
+                    <h6 class="text-white-55">Sedang Diproses</h6>
                     <h3 class="mb-0 fw-bold"><?php echo $diproses; ?></h3>
                 </div>
                 <i class="bi bi-tools fs-1 text-black-50"></i>
@@ -54,7 +54,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
         <div class="card p-3 h-100 bg-success text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h6 class="text-white-50">Selesai</h6>
+                    <h6 class="text-white-55">Selesai</h6>
                     <h3 class="mb-0 fw-bold"><?php echo $selesai; ?></h3>
                 </div>
                 <i class="bi bi-check-circle fs-1 text-black-50"></i>
