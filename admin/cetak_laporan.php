@@ -8,7 +8,7 @@ include 'header.php';
 
 <div class="card shadow mb-4 no-print">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Filter Laporan</h6>
+        <h6 class="m-0 font-weight-bold text-black">Filter Laporan</h6>
     </div>
     <div class="card-body">
         <form method="GET" action="cetak_laporan.php" class="row g-3">
