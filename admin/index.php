@@ -10,6 +10,7 @@ $total_pengaduan = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pengadu
 $baru = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pengaduan WHERE status='baru'"));
 $diproses = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pengaduan WHERE status='diproses'"));
 $selesai = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pengaduan WHERE status='selesai'"));
+$ditolak = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pengaduan WHERE status='ditolak'"));
 
 // Get category stats
 $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pengaduan) as jumlah FROM kategori k LEFT JOIN pengaduan p ON k.id_kategori = p.id_kategori GROUP BY k.id_kategori");
@@ -61,6 +62,17 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
             </div>
         </div>
     </div>
+        <div class="col-12 col-md-6 col-xl-3">
+        <div class="card p-3 h-100 bg-red text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-white-55">Ditolak</h6>
+                    <h3 class="mb-0 fw-bold"><?php echo $ditolak; ?></h3>
+                </div>
+                <i class="bi bi-x-lg fs-1 text-black-50"></i>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
@@ -88,6 +100,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
                                     $status_badge = '';
                                     if($row['status'] == 'baru') $status_badge = '<span class="badge bg-warning text-white">Baru</span>';
                                     elseif($row['status'] == 'diproses') $status_badge = '<span class="badge bg-info">Proses</span>';
+                                    elseif($row['status'] == 'ditolak') $status_badge = '<span class="badge bg-info">Ditolak</span>';
                                     else $status_badge = '<span class="badge bg-success">Selesai</span>';
                                     
                                     echo "<tr>";

@@ -44,6 +44,7 @@
                     <option value="baru" <?php echo (isset($_GET['status']) && $_GET['status'] == 'baru') ? 'selected' : ''; ?>>Baru</option>
                     <option value="diproses" <?php echo (isset($_GET['status']) && $_GET['status'] == 'diproses') ? 'selected' : ''; ?>>Diproses</option>
                     <option value="selesai" <?php echo (isset($_GET['status']) && $_GET['status'] == 'selesai') ? 'selected' : ''; ?>>Selesai</option>
+                    <option value="ditolak" <?php echo (isset($_GET['status']) && $_GET['status'] == 'ditolak') ? 'selected' : ''; ?>>Ditolak</option>
                 </select>
             </div>
             <div class="col-md-3 d-flex align-items-end">
@@ -101,6 +102,7 @@
                                 'baru' => 'bg-warning text-white',
                                 'diproses' => 'bg-info',
                                 'selesai' => 'bg-success',
+                                'ditolak' => 'bg-red',
                                 default => 'bg-secondary'
                             };
                             ?>

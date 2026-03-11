@@ -102,6 +102,7 @@ $tanggapan = mysqli_query($koneksi, "SELECT t.*, u.nama as nama_admin FROM tangg
                             <option value="baru" <?php echo ($data['status']=='baru')?'selected':''; ?>>Baru</option>
                             <option value="diproses" <?php echo ($data['status']=='diproses')?'selected':''; ?>>Diproses</option>
                             <option value="selesai" <?php echo ($data['status']=='selesai')?'selected':''; ?>>Selesai</option>
+                            <option value="ditolak" <?php echo ($data['status']=='ditolak')?'selected':''; ?>>Ditolak</option>
                         </select>
                     </div>
                     
