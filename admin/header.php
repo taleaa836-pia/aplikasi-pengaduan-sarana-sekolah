@@ -112,8 +112,8 @@ include __DIR__ . '/../config/koneksi.php';
         </h6>
         <ul class="nav flex-column mb-2">
             <!-- Add report links if needed -->
-             <li class="nav-item">
-            <a class="nav-link" href="cetak_laporan.php" target="_blank">
+              <li class="nav-item">
+            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'cetak_laporan.php' ? 'active' : ''; ?>" href="cetak_laporan.php">
               <i class="bi bi-printer me-2"></i>
               Cetak Laporan
             </a>
