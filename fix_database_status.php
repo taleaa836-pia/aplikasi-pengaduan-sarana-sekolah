@@ -8,6 +8,11 @@ $sql = "ALTER TABLE pengaduan MODIFY COLUMN status ENUM('baru', 'diproses', 'sel
 
 if (mysqli_query($koneksi, $sql)) {
     echo "<p style='color: green;'>✅ Berhasil menambahkan status 'ditolak' ke dalam database.</p>";
+    
+    // Check current structure
+    $res = mysqli_query($koneksi, "SHOW COLUMNS FROM pengaduan LIKE 'status'");
+    $row = mysqli_fetch_assoc($res);
+    echo "<p>Struktur kolom saat ini: <b>" . $row['Type'] . "</b></p>";
 } else {
     echo "<p style='color: red;'>❌ Gagal mengubah database: " . mysqli_error($koneksi) . "</p>";
 }

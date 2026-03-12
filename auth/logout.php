@@ -5,9 +5,10 @@ if (session_status() === PHP_SESSION_NONE) {
     }
     session_start();
 }
+$_SESSION = array();
 session_destroy();
 
-// Hapus Cookie backup
+// Hapus Cookie backup (Gunakan domain default jika ada)
 setcookie('sopia_auth', '', time() - 3600, "/");
 
 header("Location: login.php?pesan=logout");

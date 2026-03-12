@@ -24,8 +24,8 @@ include 'header.php';
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select" id="status" name="status">
                     <option value="">Semua Status</option>
-                    <option value="0" <?php echo (isset($_GET['status']) && $_GET['status'] === '0') ? 'selected' : ''; ?>>Menunggu</option>
-                    <option value="proses" <?php echo (isset($_GET['status']) && $_GET['status'] == 'proses') ? 'selected' : ''; ?>>Proses</option>
+                    <option value="baru" <?php echo (isset($_GET['status']) && $_GET['status'] == 'baru') ? 'selected' : ''; ?>>Baru</option>
+                    <option value="diproses" <?php echo (isset($_GET['status']) && $_GET['status'] == 'diproses') ? 'selected' : ''; ?>>Diproses</option>
                     <option value="selesai" <?php echo (isset($_GET['status']) && $_GET['status'] == 'selesai') ? 'selected' : ''; ?>>Selesai</option>
                     <option value="ditolak" <?php echo (isset($_GET['status']) && $_GET['status'] == 'ditolak') ? 'selected' : ''; ?>>Ditolak</option>
                 </select>
@@ -85,8 +85,8 @@ include 'header.php';
             }
             if (isset($_GET['status']) && $_GET['status'] != "") {
                 $status_labels = [
-                    '0' => 'Menunggu',
-                    'proses' => 'Proses',
+                    'baru' => 'Baru',
+                    'diproses' => 'Diproses',
                     'selesai' => 'Selesai',
                     'ditolak' => 'Ditolak'
                 ];
@@ -156,8 +156,8 @@ include 'header.php';
                                 <td><?php echo htmlspecialchars($d['judul']); ?></td>
                                 <td class="text-center">
                                     <?php 
-                                    if($d['status'] == '0') {
-                                        echo 'Menunggu';
+                                    if($d['status'] == 'baru') {
+                                        echo 'Baru';
                                     } else {
                                         echo ucfirst($d['status']);
                                     }

@@ -24,7 +24,14 @@ $query_tanggapan = "INSERT INTO tanggapan (id_pengaduan, id_admin, isi_tanggapan
 if (mysqli_query($koneksi, $query_tanggapan)) {
     // Update status pengaduan
     $query_status = "UPDATE pengaduan SET status='$status' WHERE id_pengaduan='$id_pengaduan'";
-    mysqli_query($koneksi, $query_status);
+    if(!mysqli_query($koneksi, $query_status)) {
+        die("Gagal update status: " . mysqli_error($koneksi));
+    }
+    
+    // Debugging (opsional, bisa dihapus setelah fix)
+    if(mysqli_affected_rows($koneksi) == 0) {
+        // Mungkin statusnya memang sudah sama, atau ada masalah di ID
+    }
     
     header("Location: tanggapan.php?id=$id_pengaduan&pesan=sukses");
 } else {
