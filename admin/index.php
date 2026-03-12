@@ -17,8 +17,8 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
 
 ?>
 
-<div class="row g-4 mb-4">
-    <div class="col-12 col-md-6 col-xl-3">
+<div class="row justify-content-center g-4 mb-4">
+    <div class="col-12 col-md-4">
         <div class="card p-3 h-100 bg-primary text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -29,7 +29,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-3">
+    <div class="col-12 col-md-4">
         <div class="card p-3 h-100 bg-warning text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -40,7 +40,7 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-3">
+    <div class="col-12 col-md-4">
         <div class="card p-3 h-100 bg-info text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -51,7 +51,18 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-3">
+    <div class="col-12 col-md-4">
+        <div class="card p-3 h-100 bg-red text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-white">Ditolak</h6>
+                    <h3 class="mb-0 fw-bold"><?php echo $ditolak; ?></h3>
+                </div>
+                <i class="bi bi-x-lg fs-1 text-black-50"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
         <div class="card p-3 h-100 bg-success text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -59,17 +70,6 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
                     <h3 class="mb-0 fw-bold"><?php echo $selesai; ?></h3>
                 </div>
                 <i class="bi bi-check-circle fs-1 text-black-50"></i>
-            </div>
-        </div>
-    </div>
-        <div class="col-12 col-md-6 col-xl-3">
-        <div class="card p-3 h-100 bg-red text-white">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h6 class="text-white-55">Ditolak</h6>
-                    <h3 class="mb-0 fw-bold"><?php echo $ditolak; ?></h3>
-                </div>
-                <i class="bi bi-x-lg fs-1 text-black-50"></i>
             </div>
         </div>
     </div>
@@ -100,8 +100,9 @@ $kategori_stats = mysqli_query($koneksi, "SELECT k.nama_kategori, COUNT(p.id_pen
                                     $status_badge = '';
                                     if($row['status'] == 'baru') $status_badge = '<span class="badge bg-warning text-white">Baru</span>';
                                     elseif($row['status'] == 'diproses') $status_badge = '<span class="badge bg-info">Proses</span>';
-                                    elseif($row['status'] == 'ditolak') $status_badge = '<span class="badge bg-info">Ditolak</span>';
-                                    else $status_badge = '<span class="badge bg-success">Selesai</span>';
+                                    elseif($row['status'] == 'ditolak') $status_badge = '<span class="badge bg-red">Ditolak</span>';
+                                    elseif($row['status'] == 'selesai') $status_badge = '<span class="badge bg-success">Selesai</span>';
+                                    else $status_badge = '<span class="badge bg-secondary">Unknown</span>';
                                     
                                     echo "<tr>";
                                     echo "<td>".date('d/m/Y', strtotime($row['tanggal']))."</td>";

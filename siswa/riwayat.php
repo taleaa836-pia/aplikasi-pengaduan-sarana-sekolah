@@ -30,6 +30,7 @@
                                         'baru' => 'bg-warning text-white',
                                         'diproses' => 'bg-info',
                                         'selesai' => 'bg-success',
+                                        'ditolak' => 'bg-red',
                                         default => 'bg-secondary'
                                     };
                                     ?>

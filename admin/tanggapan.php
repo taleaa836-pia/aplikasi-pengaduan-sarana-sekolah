@@ -41,7 +41,12 @@ $tanggapan = mysqli_query($koneksi, "SELECT t.*, u.nama as nama_admin FROM tangg
                     </tr>
                     <tr>
                         <th>Status</th>
-                        <td>: <span class="badge <?php echo ($data['status']=='selesai'?'bg-success':($data['status']=='diproses'?'bg-info':'bg-warning text-white')); ?>"><?php echo ucfirst($data['status']); ?></span></td>
+                        <td>: <span class="badge <?php 
+                            if($data['status']=='selesai') echo 'bg-success';
+                            elseif($data['status']=='diproses') echo 'bg-info';
+                            elseif($data['status']=='ditolak') echo 'bg-red';
+                            else echo 'bg-warning text-white'; 
+                        ?>"><?php echo ucfirst($data['status']); ?></span></td>
                     </tr>
                     <tr>
                         <th>Judul</th>

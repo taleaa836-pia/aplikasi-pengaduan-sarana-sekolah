@@ -43,7 +43,7 @@ CREATE TABLE `pengaduan` (
   `isi_pengaduan` text NOT NULL,
   `gambar` varchar(255) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` enum('baru','diproses','selesai') NOT NULL DEFAULT 'baru',
+  `status` enum('baru','diproses','selesai','ditolak') NOT NULL DEFAULT 'baru',
   PRIMARY KEY (`id_pengaduan`),
   KEY `id_user` (`id_user`),
   KEY `id_kategori` (`id_kategori`),
